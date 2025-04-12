@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  ua-cloudlibrary:
+    build:
+      context: "/Users/josegarcia/developer/thinkiq/UA-CloudLibrary"
+      dockerfile: "UACloudLibraryServer/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/UA-CloudLibrary.dll"
+    environment:
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net9.0/UA-CloudLibrary.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "uacloudlibrary:dev"
+    ports: []
+    volumes:
+    - "/Users/josegarcia/developer/thinkiq/UA-CloudLibrary/UACloudLibraryServer:/app:rw"
+    - "/Users/josegarcia/developer/thinkiq/UA-CloudLibrary:/src:rw"
+    - "/Users/josegarcia/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"

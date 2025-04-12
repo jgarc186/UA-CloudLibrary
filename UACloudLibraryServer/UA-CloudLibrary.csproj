@@ -8,6 +8,7 @@
 		<DockerfileContext>./..</DockerfileContext>
 		<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
 		<DefineConstants>$(DEFINECONSTANTS);NOLEGACY;AZURE_AD;APIKEY_AUTH</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 	</PropertyGroup>
     <ItemGroup>
         <InternalsVisibleTo Include="CloudLibClient.Tests" />

@@ -11,6 +11,14 @@ services:
         PostgreSQLPassword: uacloudlib
         ServicePassword: uacloudlib
         PostgreSQLEndpoint: db
+        ASPNETCORE_ENVIRONMENT: Development
+        ASPNETCORE_URLS: "https://+:443;http://+:8080"
+        # Tell Kestrel to use the PFX certificate and (if applicable) its password.
+        Kestrel__Certificates__Default__Path: /root/.aspnet/https/aspnetcore-localhost-CBC034E9DB030041F729D983C98235565A086D4F.pfx
+        Kestrel__Certificates__Default__Password: ""
+    volumes:
+        # Mount your host certificate directory into /root/.aspnet/https
+        - ${HOME}/.aspnet/dev-certs/https:/root/.aspnet/https:ro
   db:
     image: postgres
     restart: always
